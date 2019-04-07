@@ -9,12 +9,13 @@ function tempoReal() {
         //É adicionado um zero à esquerda para ficar 01:20
         document.getElementById('hora').innerHTML = "<h1>0" + date.getHours() + ":" + date.getMinutes() + "</h1>";
     }
-    //Faz o mesmo mas com minutos
-    else if(date.getMinutes().toString() < 2) {
+
+    if(date.getMinutes().toString().length < 2) {
+        //É adicionado um zero à esquerda para ficar 13:05
         document.getElementById('hora').innerHTML = "<h1>" + date.getHours() + ":0" + date.getMinutes() + "</h1>";
     }
     //Se a hora e o minuto for parecido com 12:20, não é adicionado nada
-    else {
+    if (date.getHours().toString().length == 2 && date.getMinutes().toString().length == 2) {
         document.getElementById('hora').innerHTML = "<h1>" + date.getHours() + ":" + date.getMinutes() + "</h1>";
     }
 
